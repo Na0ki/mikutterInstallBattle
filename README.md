@@ -1,7 +1,6 @@
 # MikutterInstallBattle
-macOS Sierra での mikutter のインストール手順です。  
-前提条件として以下のものが必要です。
-事前にインストールして再起動しておいてください。
+macOS Sierra での mikutter のインストール手順。  
+前提条件として以下のものが必要であるため、事前にインストールして再起動しておくこと。
 * [homebrew](https://brew.sh/index_ja.html)
 * [XQuartz](https://www.xquartz.org/)
 
@@ -41,16 +40,23 @@ macOS Sierra での mikutter のインストール手順です。
     ```
 
 ## ruby の用意  
-1. macOS にはデフォルトで `ruby` が入っていますが、ここでは任意のバージョンにするために　`rbenv` をインストールします。
+1. macOS にはデフォルトで `ruby` が入っていますが、ここでは任意のバージョンにするために　`rbenv` をインストールする。
     ```shell
     $ brew install rbenv
     ```
-1. `rbenv` をインストールしたら、使っているシェルの `rc` ファイルに以下を追記します。( `.bashrc`, `.zshrc` など )
+1. `rbenv` をインストールしたら、使っているシェルの `rc` ファイルに以下を追記する。( `.bashrc`, `.zshrc` など )
     ```
     export PATH=$HOME/.rbenv/bin:$PATH
     eval "$(rbenv init - zsh)"
     ```
-1. `rbenv` を使って `ruby` をインストールします。
+1. `rbenv` を使って `ruby` をインストールします。  
+    のちのち pry とか使いたい時に日本語が化けたりするので回避のため以下のコマンドを実行する。
+    ```shell
+    $ brew install readline
+    $ brew link readline --force
+    $ RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
+    ```
+    ruby のインストール
     ```shell
     $ rbenv install 2.4.1
     $ cd [mikutterのダウンロードディレクトリ]
@@ -58,8 +64,15 @@ macOS Sierra での mikutter のインストール手順です。
     ```
 
 ## mikutter の依存ライブラリのインストール  
-以下、全て mikutter のダウンロードディレクトリにいる前提です。  
+以下、全て mikutter のダウンロードディレクトリにいる前提で進める。  
 `$ cd /path/to/mikutter`
+1. Xcode のコマンドラインツールをインストール  
+    そういえば、homebrew のインストール時に入れてたというやつ。
+    すでに入ってる人は次の手順に進む。  
+    これがないと `nokogiri` やらのインストールに失敗する。（ thx [@rettar5](https://twitter.com/rettar5/status/871323979079835648) ）
+    ```
+    $ xcode-select --install
+    ```
 1. bundler をインストール
     ```shell
     $ gem install bundler
@@ -92,24 +105,24 @@ macOS Sierra での mikutter のインストール手順です。
 ## 日本語入力
 1. MacUIM のインストール
 
-    以下の GitHub のページから MacUIM をインストールします。
+    以下の GitHub のページから MacUIM をインストールする。
     * [MacUIM](https://github.com/e-kato/macuim/releases)
 
-    インストーラがある Latest を使います。  
+    インストーラがある Latest を使う。  
     インストールしようとするとセキュリティがうんちゃらと出るのでノリと雰囲気で乗り切る。（設定のセキュリティを見るのです）  
-    なお、インストールし次第ログアウトを迫られるので、ログアウトしても問題ないようにしておくと吉です。
+    なお、インストールし次第ログアウトを迫られるので、ログアウトしても問題ないようにしておくと吉。
 
 1. 起動設定の追加
 
-    MacUIM の起動設定を書いたりします。  
-    * `/Library/LaunchAgents/` に [mikutter_env.plist](./config/mikutter_env.plist) を設置します。  
-    パスの関係上 `sudo` で設置する必要があります。
-    * 以下のコマンドを実行してロードに必要なスクリプトを作ります。
+    MacUIM の起動設定を書いたりする。  
+    * `/Library/LaunchAgents/` に [mikutter_env.plist](./config/mikutter_env.plist) を設置する。  
+    パスの関係上 `sudo` で設置する必要がある。
+    * 以下のコマンドを実行してロードに必要なスクリプトを作る。
         ```
         $ mkdir -p ~/.xinitrc.d
         $ touch ~/.xinitrc.d/uim-xim.sh
         ```
-    * 上で作った `uim-xim.sh` に以下を記述して保存します。
+    * 上で作った `uim-xim.sh` に以下を記述して保存する。
         ```shell
         #!/bin/sh
         /Library/Frameworks/UIM.framework/Versions/Current/bin/uim-xim &
@@ -126,11 +139,11 @@ macOS Sierra での mikutter のインストール手順です。
         1. uimタブの全体設定をする
             * 標準入力方式を設定する
 
-                全体設定の `標準の入力方式を指定` にチェックし、`標準の入力方式` を `mozc` にする
+                全体設定の `標準の入力方式を指定` にチェックし、`標準の入力方式` を `mozc` にする。
                 ![標準の入力方式の指定](./resource/uim-general.png)
             * 遅延ローディングの無効化
 
-                `高速起動のための遅延ローディングを有効にする` のチェックを外す
+                `高速起動のための遅延ローディングを有効にする` のチェックを外す。
                 ![遅延ローディング](./resource/uim-general-loading.png)
 
         1. macOS を再起動して終わり
@@ -145,6 +158,7 @@ macOS Sierra での mikutter のインストール手順です。
 * 参考にした
     - [Mavericksで動いてたmikutterをYosemiteでも動くようにする方法](http://moguno.hatenablog.jp/entry/2014/11/23/095157) by moguno
     - [mikutter Advent Calendar 2013 Day2](http://akkiesoft.hatenablog.jp/entry/20131202/1385969580) by Akkiesoft
+    - [@rettar5 のインストールバトル実況](https://twitter.com/rettar5/status/871323979079835648) by rettar5
 
 * 林檎社
 
