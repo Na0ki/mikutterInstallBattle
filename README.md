@@ -121,7 +121,7 @@ macOS Sierra での mikutter のインストール手順です。
         export GTK_IM_MODULE=uim
         ```
     * MacUIM の設定
-        1. macOS のシステム環境設定を開き、MacUIM の設定を開く（ちょっと時間がかかる）
+        1. macOS のシステム環境設定を開き、MacUIM の設定を開く（ちょっと時間がかかる）
         1. 一般タブの入力方式を `mozc(ja)` にする
         1. uimタブの全体設定をする
             * 標準入力方式を設定する
