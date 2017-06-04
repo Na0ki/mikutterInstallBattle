@@ -66,7 +66,7 @@ macOS Sierra での mikutter のインストール手順です。
     ```
 1. `XQuartz` 向けに `Homebrew` のパッケージを少しいじる。
     ```shell
-    $ brew edit gtk+
+    $ brew edit gtk+
     ```
     エディタが起動するので次のパラメータの行をコメントアウトする。
     ```
