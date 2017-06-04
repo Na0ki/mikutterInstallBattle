@@ -102,7 +102,7 @@ macOS Sierra での mikutter のインストール手順です。
 1. 起動設定の追加
 
     MacUIM の起動設定を書いたりします。  
-    * `/Library/LaunchAgents/` に [mikutter_env.plist](/mikutter_env.plist) を設置します。  
+    * `/Library/LaunchAgents/` に [mikutter_env.plist](./config/mikutter_env.plist) を設置します。  
     パスの関係上 `sudo` で設置する必要があります。
     * 以下のコマンドを実行してロードに必要なスクリプトを作ります。
         ```
@@ -143,7 +143,7 @@ macOS Sierra での mikutter のインストール手順です。
 ## Special Thanks
 * 参考にした
     - [Mavericksで動いてたmikutterをYosemiteでも動くようにする方法](http://moguno.hatenablog.jp/entry/2014/11/23/095157) by moguno
-    - [mikutter Advent Calendar 2013 Day2](http://akkiesoft.hatenablog.jp/entry/20131202/1385969580) by akkiesoft
+    - [mikutter Advent Calendar 2013 Day2](http://akkiesoft.hatenablog.jp/entry/20131202/1385969580) by Akkiesoft
 
 * 林檎社
 
