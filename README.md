@@ -132,6 +132,7 @@ macOS Sierra での mikutter のインストール手順です。
 
                 `高速起動のための遅延ローディングを有効にする` のチェックを外す
                 ![遅延ローディング](./resource/uim-general-loading.png)
+
         1. macOS を再起動して終わり
 
             .　　　　　∞  
