@@ -1,6 +1,6 @@
 # MikutterInstallBattle
 macOS Sierra での mikutter のインストール手順です。  
-前提条件として以下のものが必要です。
+前提条件として以下のものが必要です。
 事前にインストールして再起動しておいてください。
 * [homebrew](https://brew.sh/index_ja.html)
 * [XQuartz](https://www.xquartz.org/)
