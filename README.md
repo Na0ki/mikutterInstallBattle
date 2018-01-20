@@ -97,6 +97,10 @@ macOS Sierra での mikutter のインストール手順。
     ```
     $ brew install gtk+ --build-from-source
     ```
+1. `libidn` のインストール
+    ```
+    $ brew install libidn
+    ```
 1. 依存 `gem` のインストール
     ```
     $ bundle install
