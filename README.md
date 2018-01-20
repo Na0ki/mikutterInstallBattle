@@ -1,6 +1,7 @@
 # MikutterInstallBattle
 macOS Sierra での mikutter のインストール手順。  
-前提条件として以下のものが必要であるため、事前にインストールして再起動しておくこと。
+前提条件として以下のものが必要であるため、事前にインストールして再起動しておくこと。  
+なおXQuartzのインストール後は再起動します。
 * [homebrew](https://brew.sh/index_ja.html)
 * [XQuartz](https://www.xquartz.org/)
 
@@ -22,11 +23,11 @@ macOS Sierra での mikutter のインストール手順。
 ## インストール環境  
 あくまで参考です。
 
-| name     | version |
-|----------|---------|
-| macOS    | 10.12.5 |
-| Homebrew | 1.2.1   |
-| XQuartz  | 2.7.11  |
+| name     | version          |
+|----------|------------------|
+| macOS    | 10.13.2          |
+| Homebrew | 1.5.0-6-gd14fd49 |
+| XQuartz  | 2.7.11           |
 
 ## mikutter のダウンロー<br>ド  
 1. mikutterユーザーのほとんどは `git` の `develop` を使っているんだ。（当社比）
