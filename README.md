@@ -132,6 +132,10 @@ macOS Sierra での mikutter のインストール手順。
         #!/bin/sh
         /Library/Frameworks/UIM.framework/Versions/Current/bin/uim-xim &
         ```
+    * `uim-xim.sh` に実行権限を与える
+        ```shell
+        $ chmod +x ~/.xinitrc.d/uim-xim.sh
+        ```
     * シェルの `rc` ファイルに以下の3行を追加します。
         ```
         export LANG=ja_JP.UTF-8
