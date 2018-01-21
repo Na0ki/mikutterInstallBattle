@@ -59,9 +59,9 @@ macOS Sierra での mikutter のインストール手順。
     ```
     ruby のインストール
     ```shell
-    $ rbenv install 2.4.1
+    $ rbenv install 2.5.0
     $ cd [mikutterのダウンロードディレクトリ]
-    $ rbenv local 2.4.1
+    $ rbenv local 2.5.0
     ```
 
 ## mikutter の依存ライブラリのインストール  
