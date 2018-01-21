@@ -10,12 +10,12 @@ macOS Sierra での mikutter のインストール手順。
 <!-- TOC -->
 
 - [MikutterInstallBattle](#mikutterinstallbattle)
-    - [目次](#目次)
-    - [インストール環境](#インストール環境)
-    - [mikutter のダウンロー<br>ド](#mikutter-のダウンローbrド)
-    - [ruby の用意](#ruby-の用意)
-    - [mikutter の依存ライブラリのインストール](#mikutter-の依存ライブラリのインストール)
-    - [日本語入力](#日本語入力)
+    - [目次](#%E7%9B%AE%E6%AC%A1)
+    - [インストール環境](#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E7%92%B0%E5%A2%83)
+    - [mikutter のダウンロー<br>ド](#mikutter-%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BCbr%E3%83%89)
+    - [ruby の用意](#ruby-%E3%81%AE%E7%94%A8%E6%84%8F)
+    - [mikutter の依存ライブラリのインストール](#mikutter-%E3%81%AE%E4%BE%9D%E5%AD%98%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+    - [日本語入力](#%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%85%A5%E5%8A%9B)
     - [Special Thanks](#special-thanks)
 
 <!-- /TOC -->
@@ -24,7 +24,7 @@ macOS Sierra での mikutter のインストール手順。
 あくまで参考です。
 
 | name     | version          |
-|----------|------------------|
+| -------- | ---------------- |
 | macOS    | 10.13.2          |
 | Homebrew | 1.5.0-6-gd14fd49 |
 | XQuartz  | 2.7.11           |
@@ -51,12 +51,13 @@ macOS Sierra での mikutter のインストール手順。
     eval "$(rbenv init - zsh)"
     ```
 1. `rbenv` を使って `ruby` をインストールします。  
-    のちのち pry とか使いたい時に日本語が化けたりするので回避のため以下のコマンドを実行する。
-    ```shell
-    $ brew install readline
-    $ brew link readline --force
-    $ RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
-    ```
+    * オプション  
+        のちのちpryとか使いたい人はpry日本語文字化け回避のため以下を実行する。
+        ```shell
+        $ brew install readline
+        $ brew link readline --force
+        $ RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
+        ```
     ruby のインストール
     ```shell
     $ rbenv install 2.5.0
