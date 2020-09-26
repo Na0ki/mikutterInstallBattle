@@ -79,29 +79,13 @@ macOS Sierra での mikutter のインストール手順。
     ```shell
     $ gem install bundler
     ```
-1. `XQuartz` 向けに `Homebrew` のパッケージを少しいじる。
-    ```shell
-    $ brew edit gtk+
-    ```
-    エディタが起動するので次のパラメータの行をコメントアウトする。
-    ```
-    "--with-gdktarget=quartz"
-    ```
-1. `cairo` のインストール
-    ```shell
-    $ brew install cairo --with-x11
-    ```
+1. `gtk+` と `cairo` のインストール  
+    この手順はshibafu528氏が新たにまとめてくれました。  
+    下記を参考にしてください。  
+    https://www.shibafu528.info/2020/09/macmikutter.html
 1. `pango` のインストール
     ```
     $ brew install pango
-    ```
-1. `gtk+` のインストール
-    ```
-    $ brew install gtk+ --build-from-source
-    ```
-1. `libidn` のインストール
-    ```
-    $ brew install libidn
     ```
 1. 依存 `gem` のインストール
     ```
@@ -164,11 +148,37 @@ macOS Sierra での mikutter のインストール手順。
         　　՞  
         　　　　　　　　　お わ り
 
+## インストール手順変更履歴
+1. `libidn` のインストール  
+    2020/09/26時点の最新のmikutterではtwitterプラグインを使用する際にも `libidn` には依存しなくなったため、下記のコマンド実行を手順から除外した。
+    ```
+    $ brew install libidn
+    ```
+1. `gtk+` と `cairo` のインストール  
+    2020/09/26時点ではこの手順では足らなかったため、代わりにshibafu528の記事へのリンクに替えた。
+    1. `XQuartz` 向けに `Homebrew` のパッケージを少しいじる。
+        ```shell
+        $ brew edit gtk+
+        ```
+        エディタが起動するので次のパラメータの行をコメントアウトする。
+        ```
+        "--with-gdktarget=quartz"
+        ```
+    1. `cairo` のインストール
+        ```shell
+        $ brew install cairo --with-x11
+        ```
+    1. `gtk+` のインストール
+        ```
+        $ brew install gtk+ --build-from-source
+        ```
+
 ## Special Thanks
 * 参考にした
     - [Mavericksで動いてたmikutterをYosemiteでも動くようにする方法](http://moguno.hatenablog.jp/entry/2014/11/23/095157) by moguno
     - [mikutter Advent Calendar 2013 Day2](http://akkiesoft.hatenablog.jp/entry/20131202/1385969580) by Akkiesoft
     - [@rettar5 のインストールバトル実況](https://twitter.com/rettar5/status/871323979079835648) by rettar5
+    - [Macを買ってmikutterを入れたときのメモ](https://www.shibafu528.info/2020/09/macmikutter.html) by shibafu528
 
 * 林檎社
 
